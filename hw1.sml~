@@ -1,0 +1,13 @@
+fun isolder (date1: int*int*int, date2: int*int*int) =
+    if (#1 date1) > (#1 date2)
+    then date1
+    else if (#1 date1) = (#1 date2)
+         then if (#2 date1) > (#2 date2)
+              then date1
+              else if (#2 date1) = (#2 date2)
+		   then if (#3 date1) > (#3 date2)
+                        then date1
+                        else if (#3 date1) = (#3 date2)
+                             then false
+                             else date2
+               
