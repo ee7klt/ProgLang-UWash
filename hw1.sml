@@ -47,11 +47,21 @@ fun date_to_string (date: (int*int*int)) =
     end
 
 
-fun number_before_reaching_sum (sum: int, xs : int list) =
-   if null xs
+fun number_before_reaching_sum (sum: int, x : int list) =
+   if null x
    then 0
-   else if ((hd xs) + number_before_reaching_sum(sum, tl xs)) <  sum
-        then   number_before_reaching_sum(sum, tl xs) + 1
-        else number_before_reaching_sum(sum, tl xs)
+   else if sum <= (hd x)
+        then 0
+        else number_before_reaching_sum(sum - (hd x), tl x) + 1
 
   
+fun what_month (day: int) = 
+   let val days = [31,28,31,30,31,30,31,31,30,31,30,31]
+   in number_before_reaching_sum(day, days) + 1
+   end
+
+
+fun month_range (day1: int, day2, int) =
+   if day1>day2
+   then []
+   else
