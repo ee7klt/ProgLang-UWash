@@ -40,5 +40,18 @@ fun get_nth (strings: string list, n: int) =
 
 
 
+fun date_to_string (date: (int*int*int)) =
+    let val months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    in
+      get_nth(months,(#2 date)) ^ " " ^ Int.toString(#3 date) ^ ", " ^ Int.toString(#1 date)
+    end
+
+
+fun number_before_reaching_sum (sum: int, xs : int list) =
+   if null xs
+   then 0
+   else if ((hd xs) + number_before_reaching_sum(sum, tl xs)) <  sum
+        then   number_before_reaching_sum(sum, tl xs) + 1
+        else number_before_reaching_sum(sum, tl xs)
 
   
