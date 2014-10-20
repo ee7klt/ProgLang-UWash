@@ -1,0 +1,3796 @@
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml"
+= ;
+[opening hw1.sml]
+hw1.sml:14.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "hw1.sml";
+[opening hw1.sml]
+val isolder = fn : (int * int * int) * (int * int * int) -> bool
+val it = () : unit
+- isolder ((1978,11,3),(1945,11,23));
+val it = true : bool
+- isolder ((1978,11,3),(1985,11,23));
+val it = false : bool
+- isolder ((1985,11,3),(1985,11,23));
+val it = false : bool
+- isolder ((1985,11,3),(1985,11,3));
+val it = false : bool
+- isolder ((1985,12,3),(1985,11,3));
+val it = true : bool
+- dates = [(1978,11,3),(1945,11,23),(1972,3,23)];
+stdIn:8.1-8.6 Error: unbound variable or constructor: dates
+- val dates = [(1978,11,3),(1945,11,23),(1972,3,23)];
+val dates = [(1978,11,3),(1945,11,23),(1972,3,23)] : (int * int * int) list
+- hd dates
+= ;
+val it = (1978,11,3) : int * int * int
+- #2 hd dates
+= ;
+stdIn:11.1-11.12 Error: operator and operand don't agree [type mismatch]
+  operator domain: {2:'Y; 'Z}
+  operand:         'X list -> 'X
+  in expression:
+    (fn {2=2,...} => 2) hd
+- #2 (hd dates);
+val it = 11 : int
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml"
+= ;
+[opening hw1.sml]
+hw1.sml:6.4-8.57 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    null dates
+hw1.sml:8.13-8.21 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    hd dates
+hw1.sml:8.47-8.55 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    tl dates
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:6.11-6.19 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    hd dates
+hw1.sml:7.28-7.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    tl dates
+hw1.sml:8.25-8.33 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    tl dates
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:6.4-10.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    null dates
+hw1.sml:8.16-8.24 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    hd dates
+hw1.sml:9.33-9.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    tl dates
+hw1.sml:10.29-10.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    tl dates
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- x;
+stdIn:1.2 Error: unbound variable or constructor: x
+- val x = [(2,3,4),(4,5,6)];
+val x = [(2,3,4),(4,5,6)] : (int * int * int) list
+- #2 (hd x);
+val it = 3 : int
+- val month = 3;
+val month = 3 : int
+- #2 (hd x) = month;
+val it = true : bool
+-  #3 (hd x) = month;
+val it = false : bool
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:6.4-10.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    null dates
+hw1.sml:8.16-8.24 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    hd dates
+hw1.sml:9.33-9.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    tl dates
+hw1.sml:10.29-10.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    tl dates
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:6.4-10.15 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    null dates
+hw1.sml:8.16-8.24 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int list
+  in expression:
+    hd dates
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- val dates = int*int*int list
+= ;
+stdIn:1.22-1.25 Error: unbound variable or constructor: int
+stdIn:1.26-1.30 Error: unbound variable or constructor: list
+stdIn:1.18-1.21 Error: unbound variable or constructor: int
+stdIn:1.14-1.17 Error: unbound variable or constructor: int
+- val dates = [(2,3,4),(4,5,6)];
+val dates = [(2,3,4),(4,5,6)] : (int * int * int) list
+- null dates
+= ;
+val it = false : bool
+- val a=[]
+= ;
+val a = [] : 'a list
+- null a
+= ;
+val it = true : bool
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+val isolder = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val it = () : unit
+- number_in_month(dates,2);
+stdIn:2.17-2.22 Error: unbound variable or constructor: dates
+- val dates [(1,2,3),(1,2,2),(1,2,4),(1,3,4)];
+= ;
+= 
+=   C-c C-c
+Interrupt
+- val dates= [(1,2,3),(1,2,2),(1,2,4),(1,3,4)];
+val dates = [(1,2,3),(1,2,2),(1,2,4),(1,3,4)] : (int * int * int) list
+- number_in_month(dates,2);
+val it = 3 : int
+- number_in_month(dates,3);
+val it = 1 : int
+- use "hw1.sml";
+[opening hw1.sml]
+val isolder = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val it = () : unit
+- dates;
+val it = [(1,2,3),(1,2,2),(1,2,4),(1,3,4)] : (int * int * int) list
+- months=[2,3];
+stdIn:9.1-9.7 Error: unbound variable or constructor: months
+- val months = [2,3];
+val months = [2,3] : int list
+- number_in_months(dates,months);
+val it = 4 : int
+- val months = [2,3,4];
+val months = [2,3,4] : int list
+- number_in_months(dates,months);
+val it = 4 : int
+- val months = [2,4];
+val months = [2,4] : int list
+- number_in_months(dates,months);
+val it = 3 : int
+- use "hw1test.sml";
+[opening hw1test.sml]
+hw1test.sml:7.14-7.22 Error: unbound variable or constructor: is_older
+hw1test.sml:13.14-13.28 Error: unbound variable or constructor: dates_in_month
+hw1test.sml:15.14-15.29 Error: unbound variable or constructor: dates_in_months
+hw1test.sml:17.14-17.21 Error: unbound variable or constructor: get_nth
+hw1test.sml:19.14-19.28 Error: unbound variable or constructor: date_to_string
+hw1test.sml:21.14-21.40 Error: unbound variable or constructor: number_before_reaching_sum
+hw1test.sml:23.14-23.24 Error: unbound variable or constructor: what_month
+hw1test.sml:25.15-25.26 Error: unbound variable or constructor: month_range
+hw1test.sml:27.15-27.21 Error: unbound variable or constructor: oldest
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1test.sml";
+[opening hw1test.sml]
+hw1test.sml:7.14-7.22 Error: unbound variable or constructor: is_older
+hw1test.sml:9.14-9.29 Error: unbound variable or constructor: number_in_month
+hw1test.sml:11.14-11.30 Error: unbound variable or constructor: number_in_months
+hw1test.sml:13.14-13.28 Error: unbound variable or constructor: dates_in_month
+hw1test.sml:15.14-15.29 Error: unbound variable or constructor: dates_in_months
+hw1test.sml:17.14-17.21 Error: unbound variable or constructor: get_nth
+hw1test.sml:19.14-19.28 Error: unbound variable or constructor: date_to_string
+hw1test.sml:21.14-21.40 Error: unbound variable or constructor: number_before_reaching_sum
+hw1test.sml:23.14-23.24 Error: unbound variable or constructor: what_month
+hw1test.sml:25.15-25.26 Error: unbound variable or constructor: month_range
+hw1test.sml:27.15-27.21 Error: unbound variable or constructor: oldest
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "hw1.sml";
+[opening hw1.sml]
+val isolder = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val it = () : unit
+- use "hw1.sml"
+= ;
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val it = () : unit
+-  is_older((1,2,3),(2,3,4)) = true;
+val it = true : bool
+- number_in_month([(2012,2,28),(2013,12,1)],2) = 1;
+val it = true : bool
+- number_in_months([(2012,2,28),(2013,12,1),(2011,3,31),(2011,4,28)],[2,3,4]) = 3;
+val it = true : bool
+- 
+
+Process sml finished
+cStandard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:20.3-22.51 Error: types of if branches do not agree [literal]
+  then branch: int
+  else branch: (int * int * int) list
+  in expression:
+    if null dates then 0 else hd dates :: dates_in_month (tl <exp>,month)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:20.3-22.55 Error: types of if branches do not agree [literal]
+  then branch: int
+  else branch: (int * int * int) list
+  in expression:
+    if null dates then 0 else hd dates :: dates_in_month (tl <exp>,month)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val it = () : unit
+- test4 = dates_in_month([(2012,2,28),(2013,12,1)],2) = [(2012,2,28)];
+stdIn:2.1-2.6 Error: unbound variable or constructor: test4
+stdIn:2.1-2.68 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: bool * bool
+  operand:         bool * (int * int * int) list
+  in expression:
+    <errorvar> = dates_in_month (<exp> :: <exp>,2) = (2012,2,28) :: nil
+- val test4 = dates_in_month([(2012,2,28),(2013,12,1)],2) = [(2012,2,28)];
+val test4 = false : bool
+dates_in_month([(2012,2,28),(2013,12,1)],2) 
+= ;
+val it = [(2012,2,28),(2013,12,1)] : (int * int * int) list
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val it = () : unit
+-  dates_in_month (tl dates, month)
+= ;
+stdIn:2.28-2.33 Error: unbound variable or constructor: month
+stdIn:2.21-2.26 Error: unbound variable or constructor: dates
+- dates_in_month([(2012,2,28),(2013,12,1)],2);
+val it = [(2012,2,28)] : (int * int * int) list
+- ates_in_month([(2012,2,28),(2013,12,1)],2) = [(2012,2,28)];
+stdIn:4.1-4.14 Error: unbound variable or constructor: ates_in_month
+- dates_in_month([(2012,2,28),(2013,12,1)],2) = [(2012,2,28)];
+val it = true : bool
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val it = () : unit
+- dates_in_months([(2012,2,28),(2013,12,1),(2011,3,31),(2011,4,28)],[2,3,4]);
+
+uncaught exception Empty
+  raised at: smlnj/init/pervasive.sml:209.19-209.24
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val it = () : unit
+- dates_in_months([(2012,2,28),(2013,12,1),(2011,3,31),(2011,4,28)],[2,3,4]);
+
+uncaught exception Empty
+  raised at: smlnj/init/pervasive.sml:209.19-209.24
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml"
+= ;
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val it = () : unit
+- dates_in_months([(2012,2,28),(2013,12,1),(2011,3,31),(2011,4,28)],[2,3,4]);
+val it = [(2012,2,28),(2011,3,31),(2011,4,28)] : (int * int * int) list
+- val it = [(2012,2,28),(2011,3,31),(2011,4,28)] : (int * int * int) listval it = [(2012,2,28),(2011,3,31),(2011,4,28)] : (int * int * int) list
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:35.5-39.25 Error: types of if branches do not agree [literal]
+  then branch: int
+  else branch: string
+  in expression:
+    if null strings
+    then 0
+    else if x <> 0 then get_nth (tl <exp>,<exp> - <exp>) else hd strings
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:35.5-39.40 Error: types of if branches do not agree [literal]
+  then branch: int
+  else branch: string
+  in expression:
+    if null strings
+    then 0
+    else if x = 0 then hd strings else get_nth (tl <exp>,<exp> - <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:37.13 Error: unbound variable or constructor: x
+hw1.sml:35.5-39.40 Error: types of if branches do not agree [literal]
+  then branch: int
+  else branch: string
+  in expression:
+    if null strings
+    then 0
+    else if <errorvar> = 1
+         then hd strings
+         else get_nth (tl <exp>,<exp> - <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:35.5-39.40 Error: types of if branches do not agree [literal]
+  then branch: int
+  else branch: string
+  in expression:
+    if null strings
+    then 0
+    else if n = 1 then hd strings else get_nth (tl <exp>,<exp> - <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:35.5-39.40 Error: types of if branches do not agree [literal]
+  then branch: int
+  else branch: string
+  in expression:
+    if null strings
+    then 0
+    else if n = 0 then hd strings else get_nth (tl <exp>,<exp> - <exp>)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:36.10 Error: illegal token
+hw1.sml:36.11 Error: illegal token
+hw1.sml:37.5 Error: syntax error: inserting  EQUALOP
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val it = () : unit
+- get_nth(["hi", "there", "how", "are", "you"], 2);
+val it = "how" : string
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val it = () : unit
+- get_nth(["hi", "there", "how", "are", "you"], 2);
+val it = "there" : string
+- val months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+val months =
+  ["January","February","March","April","May","June","July","August",
+   "September","October","November","December"] : string list
+- val get_nth = fn : string list * int -> stringstdIn:4.18-4.26 Error: syntax error: deleting  COLON ID
+stdIn:4.38 Error: syntax error found at ARROW
+- cstdIn:1.2 Error: unbound variable or constructor: c
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:45.8-47.60 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int
+  in expression:
+    null date
+hw1.sml:47.26-47.33 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int
+  in expression:
+    hd date
+hw1.sml:47.52-47.59 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         int * int * int
+  in expression:
+    tl date
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- uncaught exception ErrorstdIn:1.11 Error: syntax error found at EXCEPTION
+- 
+
+Process sml finished
+cStandard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:46.7-46.67 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string * string
+  operand:         string * int
+  in expression:
+    get_nth (months,<exp> <exp>) ^ " " ^ (fn {1=<pat>,...} => 1) date
+hw1.sml:46.7-46.67 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string * string
+  operand:         string * int
+  in expression:
+    get_nth <exp> ^ " " ^ (fn <rule>) date ^ ", " ^
+      (fn {3=<pat>,...} => 3) date
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-  val months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+val months =
+  ["January","February","March","April","May","June","July","August",
+   "September","October","November","December"] : string list
+- val date = (2,3,2014);
+val date = (2,3,2014) : int * int * int
+- fun get_nth (strings: string list, n: int) =
+    if null strings
+    then ""
+    else if n = 1
+         then hd strings
+         else  get_nth(tl strings, n-1);
+= = = = = val get_nth = fn : string list * int -> string
+- get_nth(months,2);
+val it = "February" : string
+- get_nth(months,#2 date);
+val it = "March" : string
+- get_nth(months,#2 date) ^ (#1 date);
+stdIn:11.1-11.36 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string * string
+  operand:         string * int
+  in expression:
+    get_nth (months,(fn <rule>) date) ^ (fn {1=<pat>,...} => 1) date
+- get_nth(months,#2 date) ^ Int.toString(#1 date);
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val it = "March2" : string
+- get_nth(months,2);val it = "February" : string
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val it = () : unit
+- date_to_string((2013, 6, 1));
+val it = "June 1, 2013" : string
+- val it = "June 1, 2013" : stringval it = "June 1, 2013" : string
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:51.4 Error: syntax error: inserting  EQUALOP
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- hw1.sml:51.4 Error: syntax error: inserting  EQUALOPstdIn:1.10 Error: syntax error found at REAL
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:51.4 Error: syntax error: inserting  EQUALOP
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:51.4 Error: syntax error: inserting  EQUALOP
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-              ../compiler/TopLevel/interact/evalloop.sml:44.55stdIn:1.15-1.17 Error: syntax error: deleting  DOT DOT
+stdIn:1.58 Error: syntax error found at REAL
+- 
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int list * int -> int
+val it = () : unit
+- val number_before_reaching_sum = fn : int list * int -> intstdIn:2.37-2.42 Error: syntax error: deleting  COLON ID
+stdIn:2.54 Error: syntax error found at ARROW
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> stringus
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unitnumber_before_reaching_sum(10, [1,2,3,4,5])
+-   C-c C-c
+Interrupt
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 10 : int
+- val date_to_string = fn : int * int * int -> stringus  C-c C-c
+Interrupt
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 9 : int
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 3 : int
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+-  number_before_reaching_sum(sum, tl xs);  C-c C-c
+Interrupt
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 5 : int
+- val it = 5 : intval it = 5 : int
+
+
+Process sml finished
+ccStandard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5])
+= ;
+val it = 5 : int
+- val dates_in_month = fnstdIn:4.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 5 : int
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 5 : int
+- 
+
+Process sml finished
+csStandard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5])
+= ;
+val it = 4 : int
+- val it = 4 : intval it = 4 : int
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:54.14 Error: expression or pattern begins with infix identifier "-"
+hw1.sml:54.14-54.16 Error: operator and operand don't agree [literal]
+  operator domain: 'Z * 'Z
+  operand:         int
+  in expression:
+    - 1
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 3 : int
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val it = () : unit
+- what_month(70);
+val it = 1 : int
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 3 : int
+- number_before_reaching_sum(70,  [31,28,31,30,31,30,31,31,30,31,30,31]);
+val it = 1 : int 
+- number_before_reaching_sum(170,  [31,28,31,30,31,30,31,31,30,31,30,31]);
+val it = 4 : int
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 4 : int
+- number_before_reaching_sum(170,  [31,28,31,30,31,30,31,31,30,31,30,31]);
+val it = 5 : int
+- number_before_reaching_sum(70,  [31,28,31,30,31,30,31,31,30,31,30,31]);
+val it = 2 : int
+- what_month(70) = 3;
+val it = false : bool
+- what_month(70) = 3;val it = false : bool
+
+
+Process sml finished
+cStandard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val it = () : unit
+- what_month(70) = 3;
+val it = true : bool
+- number_before_reaching_sum ( 50, [30,19,31]);
+val it = 2 : int
+- number_before_reaching_sum ( 50, [1,30,18,31]);
+val it = 3 : int
+- number_before_reaching_sum ( 50, [1,30,19,31]);
+val it = 3 : int
+- number_before_reaching_sum ( 50, [30,19,31]);val it = 2 : int
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:53.16-53.18 Error: unbound variable or constructor: =<
+hw1.sml:53.9-55.64 Error: operator is not a function [tycon mismatch]
+  operator: int
+  in expression:
+    sum <errorvar>
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- uncaught exception ErrorstdIn:1.11 Error: syntax error found at EXCEPTION
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val it = () : unit
+- number_before_reaching_sum(10, [1,2,3,4,5]);
+val it = 3 : int
+- number_before_reaching_sum(10, [1,2,7,4,5]);
+val it = 2 : int
+- what_month(70);
+val it = 3 : int
+- val it = 2 : intval it = 2 : int
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:67.9-67.55 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int * int * 'Z
+  operand:         int * int
+  in expression:
+    month_range (day1 + 1,day2)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-   operand:         int * intstdIn:1.4-1.11 Error: unbound variable or constructor: operand
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val month_range = fn : int * int -> int list
+val it = () : unit
+- month_range(31, 34);
+val it = [2,2,2] : int list
+- month_range(31, 34);val it = [2,2,2] : int list
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val month_range = fn : int * int -> int list
+val it = () : unit
+- month_range(31, 34);
+val it = [1,2,2] : int list
+- [opening hw1.sml]stdIn:3.2-3.9 Error: unbound variable or constructor: opening
+stdIn:3.10-3.17 Error: unbound structure: hw1 in path hw1.sml
+- use "hw1.sml";
+[opening hw1.sml]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val month_range = fn : int * int -> int list
+val it = () : unit
+- month_range(31, 34);
+val it = [1,2,2,2] : int list
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+hw1.sml:79.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:76.23-76.55 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z option
+  operand:         (int * int * int) * (int * int * int) -> bool
+  in expression:
+    valOf is_older
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-   raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27stdIn:1.15-1.17 Error: syntax error: deleting  DOT DOT
+stdIn:1.58-1.69 Error: syntax error: deleting  REAL ID REAL
+stdIn:1.2 Error: syntax error found at EOF
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:76.23-76.49 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (int * int * int) * (int * int * int)
+  operand:         'Z option * (int * int * int)
+  in expression:
+    is_older (tl_ans,hd dates)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-   operand:         'Z option * (int * int * int)stdIn:1.4-1.11 Error: unbound variable or constructor: operand
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val month_range = fn : int * int -> int list
+val oldest = fn : (int * int * int) list -> (int * int * int) option
+val it = () : unit
+- oldest([(2012,2,28),(2011,3,31),(2011,4,28)]);
+val it = SOME (2011,3,31) : (int * int * int) option
+- [library $SMLNJ-BASIS/basis.cm is stable]  C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:81.11-81.20 Error: unbound variable or constructor: is_oldest
+hw1.sml:81.8-83.40 Error: types of if branches do not agree [tycon mismatch]
+  then branch: int * int * int
+  else branch: _ option
+  in expression:
+    if <errorvar> (valOf tl_ans,hd dates) then hd dates else tl_ans
+hw1.sml:75.15-84.14 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  int * int * int
+  result type:  _ option
+  in declaration:
+    oldest_nonempty =
+      (fn dates : (int * int * int) list =>
+            if null <exp> then hd <exp> else let <dec> in <exp> end)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-   raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27stdIn:1.15-1.17 Error: syntax error: deleting  DOT DOT
+stdIn:1.58-1.69 Error: syntax error: deleting  REAL ID REAL
+stdIn:1.2 Error: syntax error found at EOF
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:81.8-83.40 Error: types of if branches do not agree [tycon mismatch]
+  then branch: int * int * int
+  else branch: (int * int * int) option
+  in expression:
+    if is_older (valOf tl_ans,hd dates) then hd dates else tl_ans
+hw1.sml:75.15-84.14 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  int * int * int
+  result type:  (int * int * int) option
+  in declaration:
+    oldest_nonempty =
+      (fn dates : (int * int * int) list =>
+            if null <exp> then hd <exp> else let <dec> in <exp> end)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-     oldest_nonempty =stdIn:1.23 Error: expression or pattern ends with infix identifier "="
+stdIn:1.6-1.21 Error: unbound variable or constructor: oldest_nonempty
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+hw1.sml:75.15-84.14 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  int * int * int
+  result type:  (int * int * int) option
+  in declaration:
+    oldest_nonempty =
+      (fn dates : (int * int * int) list =>
+            if null <exp> then hd <exp> else let <dec> in <exp> end)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-             if null <exp> then hd <exp> else let <dec> in <exp> end)stdIn:1.51-1.56 Error: syntax error: deleting  ID ID ID
+stdIn:1.69 Error: syntax error found at RPAREN
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "hw1.sml";
+[opening hw1.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val is_older = fn : (int * int * int) * (int * int * int) -> bool
+val number_in_month = fn : (int * int * int) list * int -> int
+val number_in_months = fn : (int * int * int) list * int list -> int
+val dates_in_month = fn
+  : (int * int * int) list * int -> (int * int * int) list
+val dates_in_months = fn
+  : (int * int * int) list * int list -> (int * int * int) list
+val get_nth = fn : string list * int -> string
+val date_to_string = fn : int * int * int -> string
+val number_before_reaching_sum = fn : int * int list -> int
+val what_month = fn : int -> int
+val month_range = fn : int * int -> int list
+val oldest = fn : (int * int * int) list -> (int * int * int) option
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- val x = {bar=(1+2,true andalso true) , foo=3+4 , baz=(false,9)}
+= ;
+val x = {bar=(3,true),baz=(false,9),foo=7}
+  : {bar:int * bool, baz:bool * int, foo:int}
+- val a_pair = (3+1,4+2);
+val a_pair = (4,6) : int * int
+- val a_record = {second=4+2,first=3+1};
+val a_record = {first=4,second=6} : {first:int, second:int}
+- val another_pair = {2=5,1=6};
+val another_pair = (6,5) : int * int
+- val my_record = {c:2,b:2,a:2,f:3,d:3};
+stdIn:6.19-6.22 Error: syntax error: deleting  COLON INT COMMA
+stdIn:6.22-6.25 Error: syntax error: deleting  ID COLON INT
+stdIn:6.25-6.28 Error: syntax error: deleting  COMMA ID COLON
+stdIn:6.28-6.31 Error: syntax error: deleting  INT COMMA ID
+stdIn:6.31-6.34 Error: syntax error: deleting  COLON INT COMMA
+stdIn:6.34-6.37 Error: syntax error: deleting  ID COLON INT
+-   
+- val my_record = {c=2,b=2,a=2,f=3,d=3};
+val my_record = {a=2,b=2,c=2,d=3,f=3} : {a:int, b:int, c:int, d:int, f:int}
+- #a my_record;
+val it = 2 : int
+- val x={3:"hi",1=true};
+stdIn:9.9-9.15 Error: syntax error: deleting  COLON STRING COMMA
+stdIn:9.15-9.21 Error: syntax error: deleting  INT EQUALOP ID
+- val x={3="hi",1=true};
+val x = {1=true,3="hi"} : {1:bool, 3:string}
+- val y={3="hi",1=true,2=3+4};
+val y = (true,7,"hi") : bool * int * string
+- 
+- val z={3="hi",1=true,b=3+4};
+val z = {1=true,3="hi",b=7} : {1:bool, 3:string, b:int}
+- val a={3="hi",1=true,b=c};
+stdIn:13.24 Error: unbound variable or constructor: c
+- datatype mytype = TwoInts of int*int|Str of string|Pizza;
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+- val a=Str "hi"
+= ;
+val a = Str "hi" : mytype
+- val b = Str;
+val b = fn : string -> mytype
+- val c = Pizza;
+val c = Pizza : mytype
+- val b = fn : string -> mytypestdIn:18.12-18.23 Error: syntax error: deleting  COLON ID ARROW
+stdIn:18.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val it = () : unit
+- a;
+val it = Str "hi" : mytype
+- b;
+val it = fn : string -> mytype
+- use "section2.sml";
+[opening section2.sml]
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val it = () : unit
+- f Pizza;
+val it = 3 : int
+- f (Str "hi");
+val it = 8 : int
+-  f(TwoInts(3,4));
+val it = 7 : int
+- val d = TwoInts (3,7) : mytypeval d = TwoInts (3,7) : mytype
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml"
+= ;
+[opening section2.sml]
+section2.sml:11.4-15.17 Error: match redundant
+          Pizza => ...
+          Str s => ...
+          TwoInts (i1,i2) => ...
+    -->   Pizza => ...
+  
+
+uncaught exception Error
+  raised at: ../compiler/FLINT/trans/translate.sml:1735.13-1735.21
+             ../compiler/Basics/stats/stats.sml:198.40
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-           Pizza => ...stdIn:1.18 Error: syntax error found at DARROW
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml
+= ;
+stdIn:1.6-1.19 Error: unclosed string
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+val it = () : unit
+- g (Str "hi");
+
+uncaught exception Match [nonexhaustive match failure]
+  raised at: section2.sml:22.18
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:38.43-38.48 Error: unbound variable or constructor: Neage
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+Process sml finished
+- = stdIn:2.1-2.8 Error: unbound variable or constructor: Process
+stdIn:2.9-2.12 Error: unbound variable or constructor: sml
+stdIn:2.13-2.21 Error: unbound variable or constructor: finished
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val example_exp = Add (Constant 19,Negate (Constant 4)) : exp
+val it = () : unit
+- example_exp;
+val it = Add (Constant 19,Negate (Constant 4)) : exp
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 4)) : exp
+val nineteen = 19 : int
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+val it = () : unit
+- val b = fn : string -> mytypestdIn:2.12-2.23 Error: syntax error: deleting  COLON ID ARROW
+stdIn:2.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+val it = () : unit
+- val g = fn : mytype -> intstdIn:2.12-2.23 Error: syntax error: deleting  COLON ID ARROW
+stdIn:2.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+val it = () : unit
+- val c = Pizza : mytypeval c = Pizza : mytype
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+val it = () : unit
+- val f = fn : mytype -> intstdIn:2.12-2.23 Error: syntax error: deleting  COLON ID ARROW
+stdIn:2.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+val it = () : unit
+- [library $SMLNJ-BASIS/basis.cm is stable]stdIn:2.23-2.31 Error: unbound structure: basis in path basis.cm
+stdIn:2.32-2.34 Error: unbound variable or constructor: is
+stdIn:2.35-2.41 Error: unbound variable or constructor: stable
+stdIn:2.17-2.22 Error: unbound variable or constructor: BASIS
+stdIn:2.2-2.9 Error: unbound variable or constructor: library
+stdIn:2.10 Error: unbound variable or constructor: $
+stdIn:2.11-2.16 Error: unbound variable or constructor: SMLNJ
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+val it = () : unit
+- val g = fn : mytype -> intstdIn:2.12-2.23 Error: syntax error: deleting  COLON ID ARROW
+stdIn:2.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:140.17-140.20 Error: syntax error: replacing  AND with  ANDALSO
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+Process sml finished
+- = stdIn:2.1-2.8 Error: unbound variable or constructor: Process
+stdIn:2.9-2.12 Error: unbound variable or constructor: sml
+stdIn:2.13-2.21 Error: unbound variable or constructor: finished
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val it = () : unit
+- val queenofspades : card = (Spade,Queen);
+val queenofspades = (Spade,Queen) : card
+- isQueenofSpades(queenofspades);
+val it = true : bool
+- val fiveofdiamonds : card = (Diamond,5);
+stdIn:4.5-4.40 Error: pattern and expression in val dec don't agree [literal]
+  pattern:    card
+  expression:    suit * int
+  in declaration:
+    fiveofdiamonds : card = (Diamond,5)
+- val fiveofdiamonds : card = (Diamond,Num 5);
+val fiveofdiamonds = (Diamond,Num 5) : card
+- isQueenofSpades(fiveofdiamonds);
+val it = false : bool
+- val fiveofdiamonds : card = (Diamond,Num 5);val fiveofdiamonds = (Diamond,Num 5) : card
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val it = () : unit
+- isQoS(fiveofdiamonds);
+stdIn:2.1-2.6 Error: unbound variable or constructor: isQoS
+stdIn:2.7-2.21 Error: unbound variable or constructor: fiveofdiamonds
+- val max_constant = fn : exp -> intstdIn:2.3-2.11 Error: syntax error: deleting  COLON ID ARROW
+stdIn:2.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val it = () : unit
+- isQoS(fiveofdiamonds);
+stdIn:2.7-2.21 Error: unbound variable or constructor: fiveofdiamonds
+- val queenofspades : card = (Spade,Queen);val queenofspades = (Spade,Queen) : card
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:149.6-149.41 Error: pattern and expression in val dec don't agree [literal]
+  pattern:    card
+  expression:    suit * int
+  in declaration:
+    fiveofdiamonds : card = (Diamond,5)
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- [opening section2.sml]stdIn:1.3-1.10 Error: unbound variable or constructor: opening
+stdIn:1.11-1.23 Error: unbound structure: section2 in path section2.sml
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+val it = () : unit
+- isQoS(fiveofdiamonds);
+val it = false : bool
+- val nineteen = 40 : intval nineteen = 40 : int
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val it = () : unit
+- append_my_list(2,3);
+stdIn:2.1-2.20 Error: operator and operand don't agree [literal]
+  operator domain: my_int_list * my_int_list
+  operand:         int * int
+  in expression:
+    append_my_list (2,3)
+- append_my_list(2,Cons 3);
+stdIn:1.16-2.5 Error: operator and operand don't agree [literal]
+  operator domain: int * my_int_list
+  operand:         int
+  in expression:
+    Cons 3
+stdIn:1.2-2.5 Error: operator and operand don't agree [literal]
+  operator domain: my_int_list * my_int_list
+  operand:         int * _
+  in expression:
+    append_my_list (2,Cons 3)
+- append_my_list(2,Cons [3]);
+stdIn:1.16-2.7 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int * my_int_list
+  operand:         int list
+  in expression:
+    Cons (3 :: nil)
+stdIn:1.2-2.7 Error: operator and operand don't agree [literal]
+  operator domain: my_int_list * my_int_list
+  operand:         int * _
+  in expression:
+    append_my_list (2,Cons (3 :: nil))
+- append_my_list(2,);
+=   C-c C-c
+Interrupt
+- append_my_list(2,Cons );
+stdIn:1.2-2.4 Error: operator and operand don't agree [literal]
+  operator domain: my_int_list * my_int_list
+  operand:         int * (int * my_int_list -> my_int_list)
+  in expression:
+    append_my_list (2,Cons)
+- append_my_list(2,my_int_list []);
+stdIn:1.19-2.9 Error: unbound variable or constructor: my_int_list
+stdIn:1.2-2.13 Error: operator and operand don't agree [literal]
+  operator domain: my_int_list * my_int_list
+  operand:         int * _
+  in expression:
+    append_my_list (2,<errorvar> nil)
+- append_my_list(my_int_list 2,my_int_list 3);
+stdIn:2.10-2.21 Error: unbound variable or constructor: my_int_list
+stdIn:1.17-2.7 Error: unbound variable or constructor: my_int_list
+- append_my_list(my_int_list [],my_int_list []);
+stdIn:2.11-2.22 Error: unbound variable or constructor: my_int_list
+stdIn:1.17-2.7 Error: unbound variable or constructor: my_int_list
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val it = () : unit
+- x;
+val it = Cons (4,Cons (23,Cons #)) : my_int_list
+- append_my_list(x,x);
+val it = Cons (4,Cons (23,Cons #)) : my_int_list
+- append_my_list( x, Cons( 111, Empty ) );
+val it = Cons (4,Cons (23,Cons #)) : my_int_list
+- val x = [2,3,4];
+val x = [2,3,4] : int list
+- x'
+= ;
+stdIn:6.1-6.3 Error: unbound variable or constructor: x'
+- y = [1,2,3];
+stdIn:1.2 Error: unbound variable or constructor: y
+- val y = [1,2,3];
+val y = [1,2,3] : int list
+- x::Y
+= :
+=   C-c C-c
+Interrupt
+- x::y
+= ;
+stdIn:1.2-1.6 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int list * int list list
+  operand:         int list * int list
+  in expression:
+    x :: y
+- 2::y;
+val it = [2,1,2,3] : int list
+typ- 
+- type foo = int;
+type foo = int
+- val x: foo = 4
+= ;
+val x = 4 : foo
+- x+3;
+val it = 7 : foo
+- x+4;
+val it = 8 : foo
+- x;
+val it = 4 : foo
+- val x: my_int_list = [];
+stdIn:18.5-18.24 Error: pattern and expression in val dec don't agree [tycon mismatch]
+  pattern:    my_int_list
+  expression:    'Z list
+  in declaration:
+    x : my_int_list = nil
+- val x: my_int_list = Empty [];
+stdIn:1.6-13.7 Error: operator is not a function [tycon mismatch]
+  operator: my_int_list
+  in expression:
+    Empty nil
+- val x: my_int_list = Empty;
+val x = Empty : my_int_list
+- val x: my_int_list = Cons [1,2,3];
+stdIn:19.5-19.34 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int * my_int_list
+  operand:         int list
+  in expression:
+    Cons (1 :: 2 :: 3 :: nil)
+- val x: my_int_list = Cons(1,my_int_list 2);
+stdIn:19.1-19.12 Error: unbound variable or constructor: my_int_list
+- val x = Cons(4,(Cons(23,Cons(2008,Empty)));
+= ;
+= append_my_list(x,Cons(2,Empty));
+= ;
+stdIn:19.14-20.2 Error: syntax error: deleting  RPAREN SEMICOLON SEMICOLON
+-   C-c C-c
+Interrupt
+- val x = Cons(4,Cons(23,Cons(2008,Empty)));
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+- append_my_list(x,Cons(2,Empty));
+val it = Cons (4,Cons (23,Cons #)) : my_int_list
+- val it = Cons (4,Cons (23,Cons #)) : my_int_liststdIn:24.32-24.35 Error: syntax error: deleting  HASH RPAREN RPAREN
+stdIn:24.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- Control.Print.printDepth := 100;
+[autoloading]
+[library $smlnj/compiler/current.cm is stable]
+[library $smlnj/compiler/x86.cm is stable]
+[library $smlnj/viscomp/core.cm is stable]
+[library $smlnj/viscomp/basics.cm is stable]
+[library $smlnj/viscomp/elabdata.cm is stable]
+[library $smlnj/viscomp/elaborate.cm is stable]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $smlnj/viscomp/debugprof.cm is stable]
+[library $SMLNJ-LIB/Util/smlnj-lib.cm is stable]
+[library $smlnj/MLRISC/Control.cm is stable]
+[library $SMLNJ-MLRISC/Control.cm is stable]
+[library $controls-lib.cm(=$SMLNJ-LIB/Controls)/controls-lib.cm is stable]
+[library $smlnj/smlnj-lib/controls-lib.cm is stable]
+[autoloading done]
+val it = () : unit
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons (2008,Empty))) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val it = () : unit
+- val x = Empty;
+val x = Empty : my_int_list
+- val x = Cons(1,x);
+val x = Cons (1,Empty) : my_int_list
+- val x - (2,x);
+= ;
+=   C-c C-c
+Interrupt
+- val x = (2,x);
+val x = (2,Cons (1,Empty)) : int * my_int_list
+- datatype suit = Club | Diamond | Heart | Spadedatatype suit = Club | Diamond | Heart | Spade
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val it = () : unit
+- val x=[1,2];
+val x = [1,2] : int list
+- val y = [3,4];
+val y = [3,4] : int list
+- x::y;
+stdIn:4.1-4.5 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int list * int list list
+  operand:         int list * int list
+  in expression:
+    x :: y
+- 1::[2,3];
+val it = [1,2,3] : int list
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val it = () : unit
+- 1::[2,3];
+val it = [1,2,3] : int list
+- val x=[1,2];
+val x = [1,2] : int list
+- val y = [3,4];
+val y = [3,4] : int list
+- x::y;
+stdIn:5.1-5.5 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int list * int list list
+  operand:         int list * int list
+  in expression:
+    x :: y
+- 1::[2,3];
+val it = [1,2,3] : int list
+- type card = suit * ranktype card = suit * rank
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- NONE;
+val it = NONE : 'a option
+- NONE [];
+stdIn:2.1-2.8 Error: operator is not a function [tycon mismatch]
+  operator: 'Z option
+  in expression:
+    NONE nil
+- NONE 0
+= ;
+stdIn:1.2-2.1 Error: operator is not a function [tycon mismatch]
+  operator: 'Z option
+  in expression:
+    NONE 0
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+type trip = int * int * int
+val sum_triple = fn : int * int * int -> int
+val it = () : unit
+- val x: trip = (1,2,3);
+val x = (1,2,3) : trip
+- x;
+val it = (1,2,3) : trip
+- val isQoS = fn : suit * rank -> boolstdIn:4.16-4.22 Error: syntax error: deleting  COLON ID
+stdIn:4.30 Error: syntax error found at ARROW
+- c(stdIn:4.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val sum_triple = fn : int * int * int -> int
+val it = () : unit
+- (1,2,3);
+val it = (1,2,3) : int * int * int
+- sum_triple;
+val it = fn : int * int * int -> int
+- sum_triple(1,2,3);
+val it = 6 : int
+- sum_triple(1,2,3,4);
+stdIn:5.1-5.20 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int * int * int
+  operand:         int * int * int * int
+  in expression:
+    sum_triple (1,2,3,4)
+- val it = () : unitval it = () : unit
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : mytype
+val b = fn : string -> mytype
+val c = Pizza : mytype
+val d = TwoInts (3,7) : mytype
+val e = Str "hi" : mytype
+val f = fn : mytype -> int
+val g = fn : mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val sum_triple = fn : int * int * int -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+val it = () : unit
+- val x = {first: "Adam", middle:"Gee", last:"Sandler"};
+stdIn:2.15-2.24 Error: syntax error: deleting  COLON STRING COMMA
+stdIn:2.25-2.37 Error: syntax error: deleting  ID COLON STRING
+stdIn:2.37-2.44 Error: syntax error: deleting  COMMA ID COLON
+- val x = {first="Adam", middle="Gee", last="Sandler"};
+val x = {first="Adam",last="Sandler",middle="Gee"}
+  : {first:string, last:string, middle:string}
+- full_name;
+val it = fn : {first:string, last:string, middle:string} -> string
+- full_name(x);
+val it = "Adam Gee Sandler" : string
+- sum_list([2,3]);
+val it = 5 : int
+- val x = {first="Adam", middle="Gee", last="Sandler"};val x = {first="Adam",last="Sandler",middle="Gee"}
+  : {first:string, last:string, middle:string}
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val sum_triple = fn : int * int * int -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val it = () : unit
+- val x : mytype = Pizza;
+val x = Pizza : mytype
+- val x : mytype = TwoInts(2,3);
+val x = TwoInts (2,3) : mytype
+- x;
+val it = TwoInts (2,3) : mytype
+- val x = Cons (4,Cons (23,Cons #)) : my_int_liststdIn:5.31-5.34 Error: syntax error: deleting  HASH RPAREN RPAREN
+stdIn:5.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val sum_triple = fn : int * int * int -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val it = () : unit
+- append([1,2],[3,4]);
+val it = [1,2,3,4] : int list
+- val x = Cons (4,Cons (23,Cons #)) : my_int_liststdIn:3.31-3.34 Error: syntax error: deleting  HASH RPAREN RPAREN
+stdIn:3.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = fn : int * int * int -> int
+val it = () : unit
+- sum_triple(1,2,3);
+val it = 6 : int
+- val x = (2,"s",false);
+val x = (2,"s",false) : int * string * bool
+- val append_my_list = fn : my_int_list * my_int_list -> my_int_liststdIn:4.25-4.38 Error: syntax error: deleting  COLON ID
+stdIn:4.53 Error: syntax error found at ARROW
+- cval it = Pizza : ?.mytype
+
+
+Process sml finished
+csStandard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val it = () : unit
+- sum_triple(1,2,3);
+val it = 6 : int
+- val sum_list = fn : int list -> intstdIn:3.19-3.24 Error: syntax error: deleting  COLON ID
+stdIn:3.30 Error: syntax error found at ARROW
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val it = () : unit
+- full_name1;
+val it = fn : {first:string, last:string, middle:string} -> string
+- append;
+val it = fn : 'a list * 'a list -> 'a list
+- append(["hi",2],[false,"hello"]);
+stdIn:4.8-4.16 Error: operator and operand don't agree [literal]
+  operator domain: string * string list
+  operand:         string * int list
+  in expression:
+    "hi" :: 2 :: nil
+stdIn:4.17-4.32 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: bool * bool list
+  operand:         bool * string list
+  in expression:
+    false :: "hello" :: nil
+- append(["hi",2],[false,true]);
+stdIn:1.9-1.17 Error: operator and operand don't agree [literal]
+  operator domain: string * string list
+  operand:         string * int list
+  in expression:
+    "hi" :: 2 :: nil
+- append(["2,2],[false,true]);
+=   C-c C-c
+Interrupt
+- append([4,2],[false,true]);
+stdIn:1.2-2.7 Error: operator and operand don't agree [literal]
+  operator domain: int list * int list
+  operand:         int list * bool list
+  in expression:
+    append (4 :: 2 :: nil,false :: true :: nil)
+- append([4,2],[5,6]);
+val it = [4,2,5,6] : int list
+- append([true,false],[false,false]);
+val it = [true,false,false,false] : bool list
+- append(["2,2],[false,true]);stdIn:6.9-6.11 Error: unclosed string, character, or quotation
+stdIn:6.11 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val it = () : unit
+- is_three;
+val it = fn : int -> string
+- is_three 3;
+val it = "yes" : string
+- is_three 4
+= ;
+val it = "no" : string
+- is_three false;
+stdIn:6.1-6.15 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int
+  operand:         bool
+  in expression:
+    is_three false
+- is_three false;stdIn:1.2-1.16 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int
+  operand:         bool
+  in expression:
+    is_three false
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+val it = () : unit
+- same_thing(3,3);
+val it = "yes" : string
+- same_thing("hello","hello");
+val it = "yes" : string
+- same_thing(3,"hello");
+stdIn:4.1-4.22 Error: operator and operand don't agree [literal]
+  operator domain: int * int
+  operand:         int * string
+  in expression:
+    same_thing (3,"hello")
+- same_thing(2.2,2.333);
+stdIn:1.2-2.2 Error: operator and operand don't agree [equality type required]
+  operator domain: ''Z * ''Z
+  operand:         real * real
+  in expression:
+    same_thing (2.2,2.333)
+- same_thing("hello","hello");val it = "yes" : string
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:231.7 Error: syntax error: replacing  LBRACKET with  LPAREN
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- same_thing(2.2,2.333);stdIn:1.2-1.12 Error: unbound variable or constructor: same_thing
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:230.8 Error: syntax error: inserting  FN
+section2.sml:233.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-              ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20stdIn:1.15-1.17 Error: syntax error: deleting  DOT DOT
+stdIn:1.58-1.71 Error: syntax error: deleting  REAL ID REAL
+stdIn:1.2 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:230.9-230.13 Error: unbound variable or constructor: list
+section2.sml:230.14-230.20 Error: unbound variable or constructor: triple
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+Process sml finished
+- = stdIn:2.1-2.8 Error: unbound variable or constructor: Process
+stdIn:2.9-2.12 Error: unbound variable or constructor: sml
+stdIn:2.13-2.21 Error: unbound variable or constructor: finished
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val it = () : unit
+- list_triple([1,2,3,[4,5,6],[7,8,9]);
+=   C-c C-c
+Interrupt
+- list_triple([1,2,3],[4,5,6],[7,8,9]);
+stdIn:1.2-1.13 Error: unbound variable or constructor: list_triple
+- zip3([1,2,3],[4,5,6],[7,8,9]);
+val it = [(1,4,7),(2,5,8),(3,6,9)] : (int * int * int) list
+- val sum_triple = <hidden-value> : int * int * int -> intstdIn:3.18 Error: expression or pattern begins with infix identifier "<"
+stdIn:3.32 Error: expression or pattern ends with infix identifier ">"
+stdIn:3.26-3.31 Error: unbound variable or constructor: value
+stdIn:3.19-3.25 Error: unbound variable or constructor: hidden
+stdIn:3.5-3.57 Error: operator is not a function [tycon mismatch]
+  operator: bool
+  in expression:
+    (< <errorvar> - <errorvar>) >
+stdIn:3.25 Error: overloaded variable not defined at type
+  symbol: -
+  type: bool
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:240.30-240.43 Error: unbound variable or constructor: nondecreasing
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-   operator: boolstdIn:1.4-1.12 Error: unbound variable or constructor: operator
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+val it = () : unit
+- nondecreasing [1,2,3,4,5];
+val it = true : bool
+- nondecreasing [1,3,4,7,5,8];
+val it = false : bool
+- val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) liststdIn:4.15-4.19 Error: syntax error: deleting  COLON TYVAR
+stdIn:4.27-4.34 Error: syntax error: deleting  TYVAR ID
+stdIn:4.37-4.47 Error: syntax error: deleting  TYVAR ID ARROW
+stdIn:4.49-4.56 Error: syntax error: deleting  TYVAR ASTERISK TYVAR
+stdIn:4.59-4.62 Error: syntax error: deleting  TYVAR RPAREN
+stdIn:4.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml"
+= ;
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+val it = () : unit
+- nondecreasing [2,3,4];
+val it = true : bool
+- nondecreasing [2,3,1];
+val it = false : bool
+- val it = true : boolval it = true : bool
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- multsign(-2,3);
+stdIn:1.2-1.10 Error: unbound variable or constructor: multsign
+stdIn:1.11 Error: expression or pattern begins with infix identifier "-"
+stdIn:1.10-1.16 Error: operator and operand don't agree [literal]
+  operator domain: 'Z * 'Z
+  operand:         int
+  in expression:
+    - 2
+- multsign;
+stdIn:1.2-1.10 Error: unbound variable or constructor: multsign
+- 
+Process sml finished
+- = stdIn:2.1-2.8 Error: unbound variable or constructor: Process
+stdIn:2.9-2.12 Error: unbound variable or constructor: sml
+stdIn:2.13-2.21 Error: unbound variable or constructor: finished
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+section2.sml:254.22 Error: syntax error: inserting  IF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- - stdIn:1.2 Error: expression or pattern begins with infix identifier "-"
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val it = () : unit
+- val append_my_list = fn : my_int_list * my_int_list -> my_int_liststdIn:2.25-2.38 Error: syntax error: deleting  COLON ID
+stdIn:2.53 Error: syntax error found at ARROW
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val it = () : unit
+- multsign(3,2);
+val it = P : sgn
+- val x:sgn = P;
+val x = P : sgn
+- x;
+val it = P : sgn
+- val it = P : sgnval it = P : sgn
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val it = () : unit
+- len [3,4,5];
+val it = 3 : int
+- len {a=1,b=2,c=3};
+stdIn:3.1-3.18 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         {a:int, b:int, c:int}
+  in expression:
+    len {a=1,b=2,c=3}
+- val nondecreasing = fn : int list -> boolstdIn:2.4-2.9 Error: syntax error: deleting  COLON ID
+stdIn:3.2 Error: syntax error found at ARROW
+-   C-c C-c
+Interrupt
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+val it = () : unit
+- hd [3,4,5];
+val it = 3 : int
+- hd [];
+stdIn:3.1-3.6 Warning: type vars not generalized because of
+   value restriction are instantiated to dummy types (X1,X2,...)
+
+uncaught exception Empty
+  raised at: section2.sml:278.17-278.27
+- val full_name1 = fn : {first:string, last:string, middle:string} -> stringstdIn:2.1-2.4 Error: syntax error: deleting  COLON LBRACE
+stdIn:3.4-3.10 Error: syntax error: deleting  COMMA ID
+stdIn:3.17-3.25 Error: syntax error: deleting  COMMA ID
+stdIn:3.32-3.36 Error: syntax error: deleting  RBRACE ARROW
+stdIn:3.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+val it = () : unit
+- mydiv(4,5);
+val it = 0 : int
+- mydiv(4,0);
+
+uncaught exception MyUndesirableCondition
+  raised at: section2.sml:286.15-286.37
+-   raised at: section2.sml:286.15-286.37stdIn:2.7-3.8 Error: syntax error: deleting  REAL ID REAL
+stdIn:3.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+exception MyOtherException of int * int
+val it = () : unit
+- raise MyOtherException(3,4);
+stdIn:2.1-2.28 Warning: type vars not generalized because of
+   value restriction are instantiated to dummy types (X1,X2,...)
+
+uncaught exception MyOtherException
+  raised at: stdIn:2.7-2.28
+- uncaught exception MyOtherExceptionstdIn:1.11 Error: syntax error found at EXCEPTION
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = Cons (4,Cons (23,Cons #)) : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+exception MyOtherException of int * int
+val maxlist = fn : int list * exn -> int
+val it = () : unit
+- maxlist ([2,3,4],MyUndesirableException);
+stdIn:2.18-2.40 Error: unbound variable or constructor: MyUndesirableException
+- maxlist ([2,3,4],MyUndesirableCondition);
+val it = 4 : int
+- maxlist ([2,3,4,1,1,2,10,6,1],MyUndesirableCondition);
+val it = 10 : int
+- maxlist([],MyUndesirableCondition);
+
+uncaught exception MyUndesirableCondition
+  raised at: section2.sml:295.18-295.20
+- val it = 10 : intval it = 10 : int
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = <hidden-value> : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+exception MyOtherException of int * int
+val maxlist = fn : int list * exn -> int
+val x = 42 : int
+val it = () : unit
+-use "section2.sml";
+[opening section2.sml]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+
+uncaught exception MyUndesirableCondition
+  raised at: section2.sml:295.18-295.20
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = <hidden-value> : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+exception MyOtherException of int * int
+val maxlist = fn : int list * exn -> int
+val x = <hidden-value> : int
+val fact = fn : int -> int
+val x = 6 : int
+val it = () : unit
+- 
