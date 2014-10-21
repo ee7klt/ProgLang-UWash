@@ -3793,4 +3793,214 @@ val x = <hidden-value> : int
 val fact = fn : int -> int
 val x = 6 : int
 val it = () : unit
+- exception MyOtherException of int * intexception MyOtherException of int * int
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = <hidden-value> : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+exception MyOtherException of int * int
+val maxlist = fn : int list * exn -> int
+val x = <hidden-value> : int
+val fact = <hidden-value> : int -> int
+val x = 6 : int
+val fact = fn : int -> int
+val it = () : unit
+- fact 3;
+val it = 6 : int
+- exception MyOtherException of int * intexception MyOtherException of int * int
+
+
+Process sml finished
+ Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = <hidden-value> : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+exception MyOtherException of int * int
+val maxlist = fn : int list * exn -> int
+val x = <hidden-value> : int
+val fact = <hidden-value> : int -> int
+val x = 6 : int
+val fact = fn : int -> int
+val rev = fn : 'a list -> 'a list
+val it = () : unit
+- rev [2,3,4]'
+stdIn:2.12 Error: illegal token
+- rev [2,3,4];
+stdIn:2.12 Error: illegal token  C-c C-c
+Interrupt
+- rev [1,2,3];
+  C-c C-c
+Interrupt
 - 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section2.sml";
+[opening section2.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section2.sml:225.8 Warning: calling polyEqual
+section2.sml:21.4-22.18 Warning: match nonexhaustive
+          Pizza => ...
+  
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val a = Str "hi" : ?.mytype
+val b = fn : string -> ?.mytype
+val c = Pizza : ?.mytype
+val d = TwoInts (3,7) : ?.mytype
+val e = Str "hi" : ?.mytype
+val f = <hidden-value> : ?.mytype -> int
+val g = fn : ?.mytype -> int
+datatype exp
+  = Add of exp * exp | Constant of int | Multiply of exp * exp | Negate of exp
+val eval = fn : exp -> int
+val max_constant = fn : exp -> int
+val test_exp = Add (Constant 19,Negate (Constant 40)) : exp
+val nineteen = 40 : int
+datatype suit = Club | Diamond | Heart | Spade
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+val isQueenofSpades = fn : card -> bool
+val isQoS = fn : suit * rank -> bool
+val fiveofdiamonds = (Diamond,Num 5) : card
+val queenofspades = (Spade,Queen) : card
+datatype my_int_list = Cons of int * my_int_list | Empty
+val x = <hidden-value> : my_int_list
+val append_my_list = fn : my_int_list * my_int_list -> my_int_list
+val sum_list = fn : int list -> int
+val inc_or_zero = fn : int option -> int
+val full_name = fn : {first:string, last:string, middle:string} -> string
+datatype mytype = Pizza | Str of string | TwoInts of int * int
+val f = fn : mytype -> int
+val append = fn : 'a list * 'a list -> 'a list
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = <hidden-value> : int * int * int -> int
+val sum_triple = fn : int * int * int -> int
+val full_name1 = fn : {first:string, last:string, middle:string} -> string
+val is_three = fn : int -> string
+val same_thing = fn : ''a * ''a -> string
+exception ListLengthMismatch
+val zip3 = fn : 'a list * 'b list * 'c list -> ('a * 'b * 'c) list
+val nondecreasing = fn : int list -> bool
+datatype sgn = N | P | Z
+val multsign = fn : int * int -> sgn
+val len = fn : 'a list -> int
+val hd = fn : 'a list -> 'a
+exception MyUndesirableCondition
+val mydiv = fn : int * int -> int
+exception MyOtherException of int * int
+val maxlist = fn : int list * exn -> int
+val x = <hidden-value> : int
+val fact = <hidden-value> : int -> int
+val x = 6 : int
+val fact = fn : int -> int
+val rev = fn : 'a list -> 'a list
+val it = () : unit
+- rev [1,2,3];
+val fact = fn : int -> intval rev = fn : 'a list -> 'a list

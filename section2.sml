@@ -316,3 +316,13 @@ fun fact n =
     aux(n,1)
   end
 
+fun rev xs = 
+   case xs of 
+    [] => []
+    |  x::xs'  => (rev xs') @ [x] 
+
+let val x = 5
+      val lst = SOME [3,6,1]
+  in
+      SOME (x :: valOf lst)
+  end;
