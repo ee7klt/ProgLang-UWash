@@ -1,4 +1,4 @@
- datatype mytype = TwoInts of int*int|Str of string|Pizza
+ (*datatype mytype = TwoInts of int*int|Str of string|Pizza
 
 val a = Str "hi"
 val b = Str
@@ -326,3 +326,59 @@ let val x = 5
   in
       SOME (x :: valOf lst)
   end;
+
+
+let val x = SOME ["a","b","c"]
+
+in case x of
+   NONE => []
+    | SOME y => y
+
+end 
+
+
+
+fun a (l) =
+ if null l 
+ then NONE
+ else SOME 1
+ 
+ 
+ a nul.
+
+
+
+fun mydiv (n,m) =
+   if n mod m = 0
+   then SOME (n div m)
+   else NONE
+
+
+fun trydiv (n,m) =
+   case mydiv (n,m) of 
+    NONE => print ("failed")
+    | SOME d => print(Int.toString d)
+
+(* val factorize: int * int list -> int list option *)
+fun factorize (n,primes) =   (* (20, [2, 3, 5]) *)
+   if n = 1
+   then SOME []
+   else case primes of 
+         [] =>  NONE
+	 | m::primes' => if n mod m = 0      (* 20 mod 2 *)
+                         then case factorize (n div m, primes) of   (* (10, [2, 3 ,5])*)
+                               NONE => NONE           
+			     | SOME lst  => SOME (m::lst)          
+                         else  factorize (n, primes')      
+    
+*)
+
+val lst = [["foo"],["there"]];
+
+
+fun f ll =
+case ll of 
+   [] => NONE
+ | l::ll' => case l of
+             [] => NONE
+             | x::xs  => SOME x;  
