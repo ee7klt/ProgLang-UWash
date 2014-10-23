@@ -29,6 +29,8 @@ fun all_except_option (nam,namList) =
 
 val test1 = all_except_option("string", ["string"]) = SOME []
 
+all_except_option("a", ["a","b","c"]
+
 (*
 let val y = all_except_option(string,rest)
                      in case y of 
@@ -38,21 +40,24 @@ let val y = all_except_option(string,rest)
 *)
 
 
-
+fun cons_opt (x, xs_opt) =   case xs_opt of     NONE    => NONE   | SOME xs => SOME (x :: xs)
 
 (* get_substitutions1: (string list list, string) -> string list  *)
 
-fun get_substitutions1 (stringListList,s) = 
+ fun get_substitutions1 (stringListList,s) = 
    case stringListList of 
      [] => []
     | x::xs  => case x of
                   [] => []
                  | y  => case all_except_option(s,y) of
-                    SOME z => z@get_substitutions1(s,xs) 
-		   |NONE =>  get_substitutions1(s,xs) 
+                    SOME z => z@get_substitutions1(xs,s) 
+		   |NONE =>  get_substitutions1(xs,s) 
 
 
-(* val test2 = get_substitutions1([["foo"],["there"]], "foo") = [] *)
+ val test2 = get_substitutions1([["foo"],["there"]], "foo") = [] 
+
+
+
 
 (*
 fun similar_names (

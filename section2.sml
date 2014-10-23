@@ -382,3 +382,64 @@ case ll of
  | l::ll' => case l of
              [] => NONE
              | x::xs  => SOME x;  
+
+
+
+fun sum1 xs = 
+    case xs of 
+        [] => 0
+     | i::xs' => i + sum1 xs' 
+
+fun sum2 xs = 
+    let fun f (xs,acc) = 
+      case xs of 
+         [] => acc
+       | i::xs' => f(xs',i+acc)
+    in
+       f(xs,0)
+    end 
+
+
+
+
+
+fun rev1 lst = 
+   case lst of 
+       [] => []
+    | x::xs => (rev1 xs) @ [x] 
+
+
+fun rev2 list = 
+   let fun aux(lst,acc) =
+           case lst of 
+               [] => acc
+	    | x::xs  => aux(xs, x::acc)
+   in
+     aux(lst,[])
+   end 
+
+
+fun factp n =
+    let
+        fun facti (n,acc) =
+            (print ("facti: n = " ^ Int.toString n ^ "; acc = " ^ Int.toString acc ^ ";\n");
+             if n = 0
+             then acc
+             else facti (n - 1, n * acc))
+    in
+        facti (n,1)
+    end
+
+
+fun fact1 n = 
+       (print ("facti: n = " ^ Int.toString n ^ "; \n");
+       if n = 0 
+       then 1 
+       else n * fact1(n-1))
+
+fun fact2 n = 
+    let fun aux(n,acc) = 
+          if n = 0 then acc else aux(n-1, acc*n)
+    in
+         aux(n,1)
+    end
