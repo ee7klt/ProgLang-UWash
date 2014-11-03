@@ -443,3 +443,22 @@ fun fact2 n =
     in
          aux(n,1)
     end
+
+
+(* count number of elements in a list *)
+fun length_of_a_list l =
+   case l of 
+      [] => 0
+    | _::l' => 1 + (length_of_a_list l')  
+
+(* tail recursive version *)
+fun length_of_a_list2 l =
+    let fun f (l,acc) =
+         case l of 
+            [] => acc
+	  | _::l' => f(l', 1+acc)
+         in 
+           f (l,0)
+         end 
+
+
