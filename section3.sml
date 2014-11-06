@@ -389,6 +389,37 @@ val _ = x := 43
 val w = (!y) + (!x)   (*85*)
 (* cannot do x + y because they are t ref, not t *)
 
-(* ('a -> 'b) -> 'a list -> 'b list *)
 
+(* Section 3 practice problems *)
+(* ('a -> 'b) -> 'a list -> 'b list *)
+val c = foldr (fn (x,acc) => x::acc) [] [1,2,3]
 fun fold_map f  = foldr (fn(x,acc) => f x :: acc) []
+val a = fold_map (fn x => x+1)
+val b = a [1,2,3] 
+
+
+val d = foldr (fn (x,acc) => (if x = 2 then x::acc else acc)) [] [1,2,3]
+fun fold_filter f = foldr (fn (x,acc) => (if f x then x::acc else acc)) []
+val d = fold_filter (fn x => x > 1) [1,2,~9,8]
+
+
+(*  ('a -> ('a * 'b) option) -> 'a -> 'b list *)
+fun unfold f state = 
+    case f state of
+      NONE => []
+     | SOME (state', x) => x::(unfold f state') 
+
+
+
+val test = unfold (fn x => if (x > 3) then NONE else SOME (x+1,x)) 0
+
+fun factorial n = foldl (fn (x,acc) => x*acc) 1 (unfold (fn x=> if x < 1 then NONE else SOME (x-1,x)) n)
+
+
+fun unfold_map f = 
+    let fun helper param = 
+            case param of  
+               [] => NONE
+		  | x::xs => SOME (xs, f x) 
+    in unfold helper
+    end

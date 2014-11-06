@@ -1,369 +1,334 @@
-(*
-
-fun double x = 2*x
-fun incr x= x+1
-val a_tuple = (double,incr, double(incr 7))
-val eighteen = (#1 a_tuple) 9
-
-
-fun increment_n_times_lame (n,x) = (* silly example, this is addition (n+x) *)
-   if n=0
-   then x
-   else 1 + increment_n_times_lame(n-1,x)
-
-fun double_n_times_lame (n,x) = 
-   if n=0
-   then x
-   else 2 * double_n_times_lame(n-1,x)
-
-fun nth_tail_lame (n,xs) =
-   if n=0
-   then xs
-   else tl (nth_tail_lame(n-1,xs)) 
-
-*)
-(*
-fun n_times (f,n,x) =   (* useful higher order function *)
-   if n=0
-   then x
-   else f(n_times (f,n-1,x))
-
-(*     f(f(f(f(....(x)))))   *)
-
-(*helper functions (FCF) *)
-
-fun increment x = x+1
-fun double x = x+x
-
-(* Use FCFs in the n_times HOF *)
-fun addition(n,x) = n_times(increment,n,x)
-fun double_n_times(n,x) = n_times(double,n,x)
-fun nth_tail(n,xs) = n_times(tl,n,xs)
-
-
-val x1 = n_times(double,4,7)
-val x2 = n_times(increment,4,7)
-val x3 = n_times(tl,2,[4,8,16,32])
-
-(*
-fun triple x = 3*x
-
-fun triple_n_times(n,x) = n_times(triple,n,x)
-*)
-
-(*  define helper function only where we need it i.e.  within triple_n_times*)
-
-(*
-fun triple_n_times (n,x) =
-   let 
-     fun triple x = 3*x
-   in
-      n_times(triple,n,x)
-   end
-*)
-
-(*  result of let is the function defined viz triple*)
-
-fun triple_n_times (n,x) =
-     n_times( let fun triple x = 3*x in triple end, n,x)
-
-
-
-(* anonymous *)
-
-
-(*
-fun triple_n_times  (n,x) =
-   n_times(fun triple x = 3*x,n,x)   (*will not work because binding, not expression*)
-*)
-
-
-(* fun triple_n_times  (n,x) =
-   n_times(fn  x => 3*x,n,x) 
-*)
-
-(* desugaring, poor style *)
-val triple_n_times = fn (n,x) => n_times (fn x => 3*x,n,x)
-
-(*
-
-fun nth_tail(n,xs) = n_times((fn y => tl y),n,xs)
-*)
-
-
-(* string list -> string list *)
-
-
-(* (a' -> b', a' list) -> (b' list) *)
-(* returns list of values with f acted upon each element of xs *)
-fun map(f,xs) =
-   case xs of 
-     [] => []
-    | x::xs'  => (f x)::map(f,xs') 
-
-
-
-(* filter out elements of xs for which f returns true *)
-(* ('a -> bool, a' list) -> (a' list) *)
-fun filter (f,xs) =
-    case xs of 
-      [] => []
-     | x::xs' => if f x then x::filter(f,xs') else filter(f,xs') 
-
-
-fun is_even v =
-    (v mod 2 = 0)
-
-(* return all even numbers from list *)
-fun all_even xs = filter(is_even, xs)
-
-(* take list of pairs, second thing has to be even *)
-
-(* 
-fn (_,v) => is_even v) 
-(int*int) -> bool
-*)
-(* return all pairs where second in pair is even*)
-(* int list -> int list *)
-fun all_even_snd xs = filter(fn (_,v) => is_even v, xs)
-
-(* double_or_triple takes in a function and returns a function *)
-(* (int->bool) -> (int -> int) *)
-(* f is (int -> bool) *)
-fun double_or_triple f = 
-   if f 7
-   then fn x => 2*x
-   else fn x => 3*x
-
-
-
-(* since 7-3 is equal to 4, double_or_triple returns the function fn x => 2*x
-which is bound to double. So now double is (int -> int). It takes a number and doubles it *)
-val double = double_or_triple (fn x => x -3 =4)
-*)
-(*
-datatype exp = Constant of int
-|Negate of exp
-|Add of exp * exp
-|Multiply of exp * exp
-
-(*given an exp, is every constant in it an even number?*)
-
-(* (int -> bool) * exp -> bool *)
-fun true_of_all_constants(f,e) =   (*does f return true for every constant? *)
-   case e of 
-     Constant i => f i
-    | Negate e1  => true_of_all_constants(f,e1)
-    | Add(e1,e2) => true_of_all_constants(f,e1) andalso true_of_all_constants(f,e2)
-  | Multiply(e1,e2) => true_of_all_constants(f,e1) andalso true_of_all_constants(f,e2)
-
-fun all_even e = true_of_all_constants ((fn x => x mod 2 = 0),e)
-
-
-
-val x =1
-fun f y = x+y 
-(* defined in an environment when x was already defined. *)
-(*so always adds 1 to the argument, no matter where it is called *)
-
-
-val x = 2 
-(* this shadows previous x, but has no effect on the 1 in the function. *)
-(* x is still 1 in the function *)
-
-val y = 3
-
-val z = f (x+y)
-
-(* 2+3=5 is passed to the argument, and 1 is added to it, so z maps to 6 *)
-
-
-val x = 6   (*irrelavant, because already defined within the function *)
-
-(* function returns a function *)
-fun f y = 
-   let val x = y+1
-   in fn z => x+y+z   (*2y+1+z*)
-   end
-
-
-val x = 3 (*irrelevant. takes the x that was defined within f *)
-(* because the anonymous was defined within f *)
-val g = f 4
-
-
-(* function f takes a function g *)
-
-fun f g =
-   let val x = 3  (* irrelevant *)
-   in g 2
-   end
-
-val x = 4
-fun h y = x+y   (* add 4 to its argument *)
-val z = f h  (* 4 + 2 not 3 + 2. x is being looked up in this env, not the env within f *)
-(* because h was defined here, not within f *)
-
-
-
-fun filter (f,xs) =
-    case xs of 
-      [] => []
-     | x::xs' => if f x then x::filter(f,xs') else filter(f,xs') 
-
-
-fun greaterThanX x = fn y => y > x   (* int -> (int->bool) *)
-fun noNegatives xs = filter(greaterThanX ~1, xs)  (* greaterThanX ~1 is int -> bool *)
-fun allGreater (xs,n) = filter(fn x => x > n,xs)
-
-
-fun allShorterThan1 (xs,s) =   (* string list * string -> string list *)
-   filter (fn x =>  String.size x < (print "!"; String.size s), xs)
-
-
-
-
-fun allShorterThan2 (xs,s) =
-   let 
-    val i = (print "!"; String.size s)
-    in filter (fn x => String.size x < i, xs)
-    end
-
-
-fun fold (f,acc,xs)  =   (* fold left *)
-   case xs of 
-      [] => acc
-    | x::xs' => fold(f,f(acc,x),xs')
-
-
-fun f1 xs = fold ((fn(x,y) => x+y), 0, xs)   (* sum elements in list *)
-fun f2 xs = fold ((fn (x,y) => x andalso y >=0), true ,xs)    (* are all list elements non-negative? *)
-
-fun f3 (xs,lo,hi) =   (* how many values in xs are between lo and hi (inclusive)?*)
-    fold (( fn (x,y) =>
-       x + (if y >= lo andalso y<= hi then 1 else 0)),0,xs)
-
-fun f4 (xs,s) = (* are all string sizes less than the size of string s?*)
-   let 
-     val i = String.size s
-     in fold((fn(x,y) => x andalso String.size y <i ),true,xs)
-     end
-
-fun f5 (g,xs) = fold((fn(x,y) => x andalso g y), true, xs)   (* do they all pass the test g *)
-(* do they produce true when passed to g *)
-
-fun f4again (xs, s) =
-    let val i = String.size s
-    in f5 (fn y => String.size y < i, xs )   (* don't need to use fold again *)
-    end
-*)
-
-
-
-fun compose (f,g) = fn x => f(g x)   (* composite f and g *) 
-(* ('b -> 'c) * ('a -> 'b) -> ('a -> 'c) *)
-
-
-(* int -> real *)
-(* boring method *)
-fun sqrt_of_abs i = Math.sqrt (Real.fromInt (abs i))
-
-(* using function composition *)
-fun sqrt_of_abs i = (Math.sqrt o Real.fromInt o abs) i
-
- 
-(* map *)
-val sqrt_of_abs = Math.sqrt o Real.fromInt o abs
-
-
-(* |> !> *)
-(*create own infix operator *)
-
-infix !>   (* pipeline operator *)
-fun x !> f = f x
-
-fun sqrt_of_abs i = i !> abs !> Real.fromInt !> Math.sqrt   
-
-
-(* run f, if its the right thing, return it, but if its not the right thing, return the result of g*)
-fun backup1 (f,g) = fn x => case f x of 
-				NONE => g x
-			     | SOME y => y
-(* ('a -> 'b option) * ('a -> 'b) -> ('a -> 'b) *)
-
-fun backup2 (f,g) = fn x => f  x handle _ => g x
-(* ('a -> 'b) * ('a -> 'b) -> ('a -> 'b) *)
-
-
-(* currying *)
-
-
-(* old way of getting effect of multiple arguments *)
-fun sorted3_tupled(x,y,z) = z >= y andalso y >= x
-
-val t1 = sorted3_tupled (7,9,11)
-
-(* new way: currying *)
-val sorted3 = fn x => fn y => fn z => z >= y andalso y >= x
-
-(* fun sorted3 x = fn y => fn z ... *)
-
-val t2 = ((sorted3 7) 9) 11
-
-fun sorted3_nicer x y z = z>=y andalso y>=x
-
-
-
-(* fold using tuples *)
-fun fold (f,acc,xs)  =   (* fold left *)
-   case xs of 
-      [] => acc
-    | x::xs' => fold(f,f(acc,x),xs')
-
-
-(* curried fold *)
-
-fun fold f acc xs  =   (* fold left *)
-   case xs of 
-      [] => acc
-    | x::xs' => fold f (f(acc,x)) xs' 
-
-
-fun sum xs = fold (fn(x,y) => x+y) 0 xs
-
-
-
-(* partial application *)
-
-val is_nonnegative = sorted3 0 0
-
-val sum = fold (fn (x,y) => x+y) 0
-
-(* does function predicate return true for _any_ element of list xs? *)
-fun exists predicate xs =
- case xs of 
-   [] => false
-  | x::xs' => predicate x orelse exists predicate xs' 
-
-
-val hasZero = exists (fn x => x=0)   (* do any of the elements equal zero? *)
-
-val incrementAll = List.map (fn x => x+1)   (* increment each element by 1 *)
-
-
-(* tupled but we wish it were curried *)
-fun range (i,j) = if i> j then [] else i :: range( i+1 ,j )
-
-(* val countup = range 1 (*doesn't work, partial application*)  *)
-
-(* take function expecting tuple, returns curried version *)
-fun curry f = fn x => fn y => f (x,y)
-fun curry f x y = f(x,y)  (* sugared version *)
-fun uncurry f(x,y) = f x y
-fun other_curry f x y = f y x (* switch args *)
-(*
-fun countup = ( curry range ) 1   (* works, now that range is curried, can use PA *)
-
-
-val xs = countup 7*)
-
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val compose = fn : ('a -> 'b) * ('c -> 'a) -> 'c -> 'b
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+infix !>
+val !> = fn : 'a * ('a -> 'b) -> 'b
+val sqrt_of_abs = fn : int -> real
+val backup1 = fn : ('a -> 'b option) * ('a -> 'b) -> 'a -> 'b
+val backup2 = fn : ('a -> 'b) * ('a -> 'b) -> 'a -> 'b
+val sorted3_tupled = fn : int * int * int -> bool
+val t1 = true : bool
+val sorted3 = fn : int -> int -> int -> bool
+val t2 = true : bool
+val sorted3_nicer = fn : int -> int -> int -> bool
+val fold = <hidden-value> : ('a * 'b -> 'a) * 'a * 'b list -> 'a
+val fold = fn : ('a * 'b -> 'a) -> 'a -> 'b list -> 'a
+val sum = <hidden-value> : int list -> int
+val is_nonnegative = fn : int -> bool
+val sum = fn : int list -> int
+val exists = fn : ('a -> bool) -> 'a list -> bool
+val hasZero = fn : int list -> bool
+val incrementAll = fn : int list -> int list
+val range = fn : int * int -> int list
+val curry = <hidden-value> : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val curry = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val uncurry = fn : ('a -> 'b -> 'c) -> 'a * 'b -> 'c
+val other_curry = fn : ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+val it = () : unit
+- curry range 1 4
+= ;
+val it = [1,2,3,4] : int list
+- curry range 1;
+val it = fn : int -> int list
+- val countup = curry range 1;
+val countup = fn : int -> int list
+- countup 3
+= ;
+val it = [1,2,3] : int list
+- ;
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section3.sml:365.5-365.12 Error: can't find function arguments in clause
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- 
+Process sml finished
+- = stdIn:2.1-2.8 Error: unbound variable or constructor: Process
+stdIn:2.9-2.12 Error: unbound variable or constructor: sml
+stdIn:2.13-2.21 Error: unbound variable or constructor: finished
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val compose = fn : ('a -> 'b) * ('c -> 'a) -> 'c -> 'b
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+infix !>
+val !> = fn : 'a * ('a -> 'b) -> 'b
+val sqrt_of_abs = fn : int -> real
+val backup1 = fn : ('a -> 'b option) * ('a -> 'b) -> 'a -> 'b
+val backup2 = fn : ('a -> 'b) * ('a -> 'b) -> 'a -> 'b
+val sorted3_tupled = fn : int * int * int -> bool
+val t1 = true : bool
+val sorted3 = fn : int -> int -> int -> bool
+val t2 = true : bool
+val sorted3_nicer = fn : int -> int -> int -> bool
+val fold = <hidden-value> : ('a * 'b -> 'a) * 'a * 'b list -> 'a
+val fold = fn : ('a * 'b -> 'a) -> 'a -> 'b list -> 'a
+val sum = <hidden-value> : int list -> int
+val is_nonnegative = fn : int -> bool
+val sum = fn : int list -> int
+val exists = fn : ('a -> bool) -> 'a list -> bool
+val hasZero = fn : int list -> bool
+val incrementAll = fn : int list -> int list
+val range = fn : int * int -> int list
+val curry = <hidden-value> : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val curry = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val uncurry = fn : ('a -> 'b -> 'c) -> 'a * 'b -> 'c
+val other_curry = fn : ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+val countup = fn : int -> int list
+val xs = [1,2,3,4,5,6,7] : int list
+val it = () : unit
+- val hasZero = fn : int list -> boolstdIn:2.18-2.23 Error: syntax error: deleting  COLON ID
+stdIn:2.29 Error: syntax error found at ARROW
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val compose = fn : ('a -> 'b) * ('c -> 'a) -> 'c -> 'b
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+infix !>
+val !> = fn : 'a * ('a -> 'b) -> 'b
+val sqrt_of_abs = fn : int -> real
+val backup1 = fn : ('a -> 'b option) * ('a -> 'b) -> 'a -> 'b
+val backup2 = fn : ('a -> 'b) * ('a -> 'b) -> 'a -> 'b
+val sorted3_tupled = fn : int * int * int -> bool
+val t1 = true : bool
+val sorted3 = fn : int -> int -> int -> bool
+val t2 = true : bool
+val sorted3_nicer = fn : int -> int -> int -> bool
+val fold = <hidden-value> : ('a * 'b -> 'a) * 'a * 'b list -> 'a
+val fold = fn : ('a * 'b -> 'a) -> 'a -> 'b list -> 'a
+val sum = <hidden-value> : int list -> int
+val is_nonnegative = fn : int -> bool
+val sum = fn : int list -> int
+val exists = fn : ('a -> bool) -> 'a list -> bool
+val hasZero = fn : int list -> bool
+val incrementAll = fn : int list -> int list
+val range = fn : int * int -> int list
+val curry = <hidden-value> : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val curry = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val uncurry = fn : ('a -> 'b -> 'c) -> 'a * 'b -> 'c
+val other_curry = fn : ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+val countup = fn : int -> int list
+val xs = [1,2,3,4,5,6,7] : int list
+val x = ref 43 : int ref
+val y = ref 42 : int ref
+val z = ref 43 : int ref
+val w = 85 : int
+val it = () : unit
+- List.map;
+val it = fn : ('a -> 'b) -> 'a list -> 'b list
+- List.foldr;
+val it = fn : ('a * 'b -> 'b) -> 'b -> 'a list -> 'b
+- fold
+= ;
+val it = fn : ('a * 'b -> 'a) -> 'a -> 'b list -> 'a
+- fold (fn(x,y) => x+y) 0 [1,2,3];
+val it = 6 : int
+- fold (fn(x,y) => x^y) [] ["a","b","c"];
+stdIn:7.1-7.39 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: string
+  operand:         'Z list
+  in expression:
+    (fold (fn (<pat>,<pat>) => <exp> ^ <exp>)) nil
+- fold (fn(x,y) => x^y) "" ["a","b","c"];
+val it = "abc" : string
+- foldr (fn(x,y) => x^y) "" ["a","b","c"];
+val it = "abc" : string
+- foldl (fn(x,y) => x^y) "" ["a","b","c"];
+val it = "cba" : string
+- foldl (fn(x,y) => x^y) "" ["a","b","c"];val it = "cba" : string
+
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val compose = fn : ('a -> 'b) * ('c -> 'a) -> 'c -> 'b
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+infix !>
+val !> = fn : 'a * ('a -> 'b) -> 'b
+val sqrt_of_abs = fn : int -> real
+val backup1 = fn : ('a -> 'b option) * ('a -> 'b) -> 'a -> 'b
+val backup2 = fn : ('a -> 'b) * ('a -> 'b) -> 'a -> 'b
+val sorted3_tupled = fn : int * int * int -> bool
+val t1 = true : bool
+val sorted3 = fn : int -> int -> int -> bool
+val t2 = true : bool
+val sorted3_nicer = fn : int -> int -> int -> bool
+val fold = <hidden-value> : ('a * 'b -> 'a) * 'a * 'b list -> 'a
+val fold = fn : ('a * 'b -> 'a) -> 'a -> 'b list -> 'a
+val sum = <hidden-value> : int list -> int
+val is_nonnegative = fn : int -> bool
+val sum = fn : int list -> int
+val exists = fn : ('a -> bool) -> 'a list -> bool
+val hasZero = fn : int list -> bool
+val incrementAll = fn : int list -> int list
+val range = fn : int * int -> int list
+val curry = <hidden-value> : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val curry = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val uncurry = fn : ('a -> 'b -> 'c) -> 'a * 'b -> 'c
+val other_curry = fn : ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+val countup = fn : int -> int list
+val xs = [1,2,3,4,5,6,7] : int list
+val x = ref 43 : int ref
+val y = ref 42 : int ref
+val z = ref 43 : int ref
+val w = 85 : int
+val fold_map = fn : ('a -> 'b) -> 'a list -> 'b list
+val it = () : unit
+- fold_map (fn x => x+1) [1,2,3];
+val it = [2,3,4] : int list
+- foldr;
+val it = fn : ('a * 'b -> 'b) -> 'b -> 'a list -> 'b
+- val fold_map = fn : ('a -> 'b) -> 'a list -> 'b liststdIn:4.19-4.24 Error: syntax error: deleting  COLON LPAREN TYVAR
+stdIn:4.25-4.31 Error: syntax error: deleting  ARROW TYVAR RPAREN
+stdIn:4.32-4.37 Error: syntax error: deleting  ARROW TYVAR
+stdIn:4.43-4.48 Error: syntax error: deleting  ARROW TYVAR
+stdIn:4.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section3.sml:394.19-396.36 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         ('Y * 'X -> 'X) -> 'X -> 'Y list -> 'X
+  in expression:
+    ((foldr (fn <pat> => <exp>)) nil) foldr
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- [autoloading]stdIn:1.3-1.14 Error: unbound variable or constructor: autoloading
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";'
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+section3.sml:394.19-395.31 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         ('Z -> 'Y) -> 'X
+  in expression:
+    ((foldr (fn <pat> => <exp>)) nil) fold_map
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+- use "section3.sml";
+[opening section3.sml]
+section3.sml:394.19-395.31 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z list
+  operand:         ('Z -> 'Y) -> 'X
+  in expression:
+    ((foldr (fn <pat> => <exp>)) nil) fold_map
+
+uncaught exception Error
+  raised at: ../compiler/TopLevel/interact/evalloop.sml:66.19-66.27
+             ../compiler/TopLevel/interact/evalloop.sml:44.55
+             ../compiler/TopLevel/interact/evalloop.sml:296.17-296.20
+-     ((foldr (fn <pat> => <exp>)) nil) fold_mapstdIn:1.18 Error: expression or pattern begins with infix identifier "<"
+stdIn:1.23 Error: expression or pattern ends with infix identifier ">"
+stdIn:1.18-1.22 Error: non-constructor applied to argument in pattern
+stdIn:1.27 Error: expression or pattern begins with infix identifier "<"
+stdIn:1.32 Error: expression or pattern ends with infix identifier ">"
+stdIn:1.28-1.31 Error: unbound variable or constructor: exp
+stdIn:1.40-1.48 Error: unbound variable or constructor: fold_map
+stdIn:1.27-1.32 Error: operator is not a function [tycon mismatch]
+  operator: bool
+  in expression:
+    (< <errorvar>) >
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.77 [built: Sat Aug 23 11:18:31 2014]
+- use "section3.sml";
+[opening section3.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[autoloading done]
+val compose = fn : ('a -> 'b) * ('c -> 'a) -> 'c -> 'b
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+val sqrt_of_abs = <hidden-value> : int -> real
+infix !>
+val !> = fn : 'a * ('a -> 'b) -> 'b
+val sqrt_of_abs = fn : int -> real
+val backup1 = fn : ('a -> 'b option) * ('a -> 'b) -> 'a -> 'b
+val backup2 = fn : ('a -> 'b) * ('a -> 'b) -> 'a -> 'b
+val sorted3_tupled = fn : int * int * int -> bool
+val t1 = true : bool
+val sorted3 = fn : int -> int -> int -> bool
+val t2 = true : bool
+val sorted3_nicer = fn : int -> int -> int -> bool
+val fold = <hidden-value> : ('a * 'b -> 'a) * 'a * 'b list -> 'a
+val fold = fn : ('a * 'b -> 'a) -> 'a -> 'b list -> 'a
+val sum = <hidden-value> : int list -> int
+val is_nonnegative = fn : int -> bool
+val sum = fn : int list -> int
+val exists = fn : ('a -> bool) -> 'a list -> bool
+val hasZero = fn : int list -> bool
+val incrementAll = fn : int list -> int list
+val range = fn : int * int -> int list
+val curry = <hidden-value> : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val curry = fn : ('a * 'b -> 'c) -> 'a -> 'b -> 'c
+val uncurry = fn : ('a -> 'b -> 'c) -> 'a * 'b -> 'c
+val other_curry = fn : ('a -> 'b -> 'c) -> 'b -> 'a -> 'c
+val countup = fn : int -> int list
+val xs = [1,2,3,4,5,6,7] : int list
+val x = ref 43 : int ref
+val y = ref 42 : int ref
+val z = ref 43 : int ref
+val w = 85 : int
+val fold_map = fn : ('a -> 'b) -> 'a list -> 'b list
+val it = () : unit
+- val countup = fn : int -> int liststdIn:2.18-2.26 Error: syntax error: deleting  COLON ID ARROW
+stdIn:2.1 Error: syntax error found at EOF
+- 
+
+Process sml finished
