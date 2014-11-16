@@ -26,7 +26,115 @@ fun sum xs =
 (* f: int list -> int *)
 
 (* make a mistake *)
-fun sum xs = 
+(*fun sum xs = 
    case xs of 
        [] => 0  (* t2: int //0 might be returned *)
     | x::xs' => x + (sum x)  (* trying to call something that takes int list with an int. error. *)
+*)
+(*
+  length: t1 -> t2
+  xs : t1
+  x : t3
+xs' : t3 list
+  t1 = t3 list
+t2 = int
+ end up with t3 list -> int
+ no constraints on t3. we never used the elements. in this case, replace
+ all the t's in there with type variables.
+ 'a list -> int
+*)
+fun length xs = 
+    case xs of 
+	[] => 0   (* t2 = int *) 
+     | x::xs' => 1 + (length xs')    (* t1 = t3 list *)
+
+(* type checker doesn't know which branch might be returned, even though
+we can see it'll always be the first *)
+
+fun f (x,y,z)  =  (* f: t1*t2*t3 -> t4, 
+		   x: t1
+		   y: t2
+		   z: t3*)
+    if true
+    then (x,y,z)       (* t4 : t1*t2*t3  *)
+    else (y,x,z)        (* t4 : t2*t1*t3 *)  (*Both have to be true *)
+	     (* only way for both to be true is if t1=t2*)
+             (* f : t1 * t1 * t3 - > t1 * t1 * t3 *)
+	     (* replace consistently: 'a*'a*'b -> 'a*'a*'b *)
+
+ 
+(*
+ compose: t1*t2 -> t3
+ f: t1
+ g: t2
+ f (g x): t3
+ x: t4
+ body: t3: t4 -> t5 
+ from g being passed x, we know t2: (t4 -> t6)
+from f being passed (g x) we know t1: t6 -> t7 
+from call to f being body of anonymous function, t7  = t5, the return type of the body of anonymous
+t1: t6 -> t5
+t2: t4-> t6
+t3: t4 -> t5
+(t6-> t5)*(t4->t6) -> (t4->t5)
+('a -> 'b)*('c -> 'a) -> ('c -> 'b)
+*)
+
+fun compose (f,g) = fn x => f (g x)
+
+
+(*return true only if i have a pattern of 12 in series eg [1,2,1,2,1,2]*)
+fun match xs = 
+    let fun s_need_one xs = 
+	    case xs of
+		[]=>true
+	      | 1::xs'=>s_need_two xs'
+	      | _ => false
+	and s_need_two xs =
+	    case xs of
+		[]=> false
+	      | 2::xs' =>s_need_one xs'
+	      | _ => false
+    in
+	s_need_one xs
+    end    
+
+(* make sure no zeros or empty strings *)
+
+datatype t1 = Foo of int|Bar of t2
+and t2 = Baz of string | Quux of t1
+
+fun no_zeros_or_empty_strings_t1 x =
+    case x of
+	Foo i => i<> 0
+      | Bar y => no_zeros_or_empty_strings_t2 y
+and no_zeros_or_empty_strings_t2 x =
+    case x of
+	Baz s => size s>0
+      | Quux y => no_zeros_or_empty_strings_t1 y  
+
+
+fun no_zeros_or_empty_strings_t1_alternate(f,x) =
+    case x of
+	Foo i => i <> 0
+      | Bar y => f y
+
+fun no_zeros_or_empty_string_t2_alternate x =
+    case x of
+	Baz s => size s>0
+      | Quux y => no_zeros_or_empty_strings_t1_alternate(no_zeros_or_empty_string_t2_alternate,y) 
+
+
+structure MyMathLib = 
+struct
+fun fact x =
+    if x=0
+    then 1 
+    else x * fact(x-1)
+
+val half_pi = Math.pi/2.0
+fun doubler y = y+y
+end
+
+
+val pi = MyMathLib.half_pi+MyMathLib.half_pi
