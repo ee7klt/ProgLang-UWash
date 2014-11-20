@@ -1,4 +1,4 @@
-(* Programming Languages, Dan Grossman, Jan-Mar 2013 *)
+ (* Programming Languages, Dan Grossman, Jan-Mar 2013 *)
 (* Section 4: Another Equivalent Structure *)
 
 (* this signature hides gcd and reduce.  
